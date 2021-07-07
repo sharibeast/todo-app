@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { useState } from "react";
+import "react-tabs/style/react-tabs.css";
+import Form from "./components/Form";
 
 function App() {
+  const [todos, setTodos] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs>
+        <TabList>
+          <Tab>All</Tab>
+          <Tab>All</Tab>
+        </TabList>
+        <TabPanel>
+          <Form
+            onSubmit={(text) => setTodos([{ text, complete: false }, ...todos])}
+          />
+          {todos.map((todo) => {
+            return <div>{todo.text}</div>;
+          })}
+        </TabPanel>
+        <TabPanel>tab 2</TabPanel>
+      </Tabs>
     </div>
   );
 }

@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
+  list-style-type: none;
+
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.r-10 {
+  margin-right: 20px;
+}
+
+:root {
+  --bg: #e5e1eb;
+  --headline: #ffffff;
+  --paragraph: #c9bae2;
+  --cardBG: #463366;
+  --cardText: #cabae2;
+  --activeColor: #ff6e6c;
+  --ff: 'Nunito', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--ff);
+}
+
+.container {
+  max-width: 700px;
+  margin: 80px auto;
+}
+
+.tabs__content {
+  padding: 30px;
+  color: var(--paragraph);
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  background: var(--cardBG);
+}
+
+.tabs__content h3 {
+  color: var(--headline);
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.tabs__nav {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
+  padding: 10px 0 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.tabs__button {
+  background: rgba(0, 0, 0, 0);
+  padding: 4px;
+  color: var(--headline);
+  box-shadow: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: block;
+  position: relative;
+  font-family: inherit;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabs__button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--activeColor);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.4s ease-in-out;
+}
+
+.tabs__button.active::after {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.4s ease-in-out;
+}
+
+
+.tabs__item:not(:last-child) {
+  margin-right: 20px;
 }
