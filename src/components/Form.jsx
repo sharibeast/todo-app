@@ -1,27 +1,21 @@
 import React, { useState } from "react";
 
-export default function Form({ addTodo }) {
+export default function Form({ addTask }) {
   const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!value) return;
+    addTask(value);
+    setValue("");
   };
 
   return (
     <form>
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="add task"
-      />
-      <button
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit(value);
-        }}
-      >
-        add
-      </button>
+      <input value={value} onChange={handleChange} placeholder="add todos.." />
+      <button onClick={handleSubmit}>add</button>
     </form>
   );
 }

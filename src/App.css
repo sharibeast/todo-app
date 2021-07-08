@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 .r-10 {
   margin-right: 20px;
 }
