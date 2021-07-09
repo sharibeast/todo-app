@@ -1,7 +1,7 @@
 import "./App.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { useState, useEffect } from "react";
-import "react-tabs/style/react-tabs.css";
+// import "react-tabs/style/react-tabs.css";
 import data from "./data.json";
 import Header from "./components/Header";
 import Form from "./components/Form";
@@ -31,15 +31,15 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="">
       <Header />
-      <Tabs>
-        <TabList>
-          <Tab>All</Tab>
-          <Tab>Active</Tab>
-          <Tab>Completed</Tab>
+      <Tabs className="width div-center ">
+        <TabList className="flex">
+          <Tab className="pointer blue">All</Tab>
+          <Tab className="pointer">Active</Tab>
+          <Tab className="pointer">Completed</Tab>
         </TabList>
-        <TabPanel>
+        <TabPanel className="">
           <Form addTask={addTask} />
           <TodoList
             handleFilter={handleFilter}
@@ -48,6 +48,7 @@ function App() {
           />
         </TabPanel>
         <TabPanel>
+          <Form addTask={addTask} />
           <TodoList handleToggle={handleToggle} todoList={activeTask} />
         </TabPanel>
 

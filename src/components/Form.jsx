@@ -14,8 +14,15 @@ export default function Form({ addTask }) {
 
   return (
     <form>
-      <input value={value} onChange={handleChange} placeholder="add todos.." />
-      <button onClick={handleSubmit}>add</button>
+      <input
+        value={value}
+        type="text"
+        onChange={handleChange}
+        placeholder="add todos.."
+      />
+      <button className="btn" onClick={handleSubmit}>
+        add
+      </button>
     </form>
   );
 }

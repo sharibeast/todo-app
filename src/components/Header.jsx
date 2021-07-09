@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header>
-      <h1>To do list</h1>
+    <header className="text-center">
+      <h1>#todo</h1>
     </header>
   );
 }

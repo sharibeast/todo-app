@@ -12,6 +12,10 @@
 
 }
 
+body {
+  background: white;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -19,6 +23,70 @@
 .strike {
   text-decoration: line-through;
 }
+
+.btn {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: #2f80ed;
+  color: white;
+  width: 70px;
+  margin-left: 15px;
+
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 70px;
+}
+
+.blue {
+  color: red;
+  border: 2px green;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.div-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.width {
+  width: 700px
+}
+
+.red {
+  background: red;
+}
+
+
+
+
+input[type=text] {
+  width: 300px;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: none;
+  border-color: #bdbdbd;
+}
+
 
 .r-10 {
   margin-right: 20px;
