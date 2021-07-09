@@ -23,6 +23,8 @@ function App() {
     let filtered = todos.filter((todo) => !todo.complete);
     setTodos(filtered);
   };
+  const deleteHandler = () =>
+    setTodos(completedTask.slice(0, completedTask.length));
 
   const addTask = (value) => {
     let copy = [...todos];
@@ -57,6 +59,7 @@ function App() {
             showButton={true}
             handleToggle={handleToggle}
             todoList={completedTask}
+            deleteHandler={deleteHandler}
           />
         </TabPanel>
       </Tabs>

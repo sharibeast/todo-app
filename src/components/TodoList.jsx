@@ -6,6 +6,7 @@ export default function TodoList({
   handleToggle,
   handleFilter,
   showButton,
+  deleteHandler,
 }) {
   return (
     <div>
@@ -16,7 +17,7 @@ export default function TodoList({
           todo={todo}
         />
       ))}
-      {showButton && <button onClick={handleFilter}>clear</button>}
+      {showButton && <button onClick={deleteHandler}>clear</button>}
     </div>
   );
 }
